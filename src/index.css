@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #070E1B;
+    color: #EDF4FC;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #070E1B; }
+  ::-webkit-scrollbar-thumb { background: #1A2D42; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #253F5E; }
+
+  ::selection { background: rgba(37,99,235,0.25); color: #EDF4FC; }
+}
+
+@layer utilities {
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .btn-glow {
+    box-shadow: 0 0 0 1px rgba(37,99,235,0.4), 0 4px 14px rgba(37,99,235,0.30), 0 2px 6px rgba(0,0,0,0.4);
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+  }
+  .btn-glow:hover:not(:disabled) {
+    box-shadow: 0 0 0 1px rgba(37,99,235,0.6), 0 6px 20px rgba(37,99,235,0.40), 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .input-glow:focus {
+    border-color: #2563EB !important;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    outline: none;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, #101D33 25%, #1A2D42 50%, #101D33 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .glass {
+    background: rgba(7, 14, 27, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid #1A2D42;
+  }
+
+  .card-hover-glow {
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .card-hover-glow:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border-color: #253F5E !important;
+  }
+
+  .nav-icon-glow {
+    filter: drop-shadow(0 0 4px rgba(37,99,235,0.6));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-4px); }
+  }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+}

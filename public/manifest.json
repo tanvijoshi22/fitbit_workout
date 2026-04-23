@@ -1,0 +1,39 @@
+{
+  "name": "FitForge",
+  "short_name": "FitForge",
+  "description": "AI-powered personal fitness companion. Every rep. Every meal. Every goal.",
+  "theme_color": "#FF4D00",
+  "background_color": "#0A0A0A",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "categories": ["health", "fitness"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Today's Workout",
+      "url": "/workout/today",
+      "description": "Start today's workout"
+    },
+    {
+      "name": "Log Weight",
+      "url": "/progress",
+      "description": "Log your weight"
+    }
+  ]
+}
